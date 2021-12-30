@@ -1,23 +1,2 @@
 <h1>Create Article</h1>
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from getting created!</h2> 
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @article do |form| %>
-  <div>
-    <%= form.label :title %><br/>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :description %><br/>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.submit 'Submit Article' %>
-  </div>
-<% end %>
+<%= render 'form' %>
